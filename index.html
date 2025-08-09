@@ -291,7 +291,7 @@
     <section class="contact" id="contact">
       <h2 class="heading">Contact <span>Me!</span></h2>
 
-      <form action="https://formspree.io/f/mrblrgby" method="post" enctype="text/plain">
+      <form id="con">
         <div class="input-box">
           <input type="text" placeholder="Full Name" />
           <input type="email" placeholder="Email Address" />
@@ -310,6 +310,34 @@
         <input type="submit" value="Send Message" class="btn" />
       </form>
     </section>
+
+    <script>
+  document.getElementById("con").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Your WhatsApp number (no spaces, no +)
+    let phoneNumber = "94712284817";
+
+    // Get form values
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let mobile = document.getElementById("mobile").value;
+    let subject = document.getElementById("subject").value;
+    let message = document.getElementById("message").value;
+
+    // Create WhatsApp URL
+    let whatsappURL =
+      `https://wa.me/${phoneNumber}?text=` +
+      `*Name:* ${encodeURIComponent(name)}%0A` +
+      `*Email:* ${encodeURIComponent(email)}%0A` +
+      `*Mobile:* ${encodeURIComponent(mobile)}%0A` +
+      `*Subject:* ${encodeURIComponent(subject)}%0A` +
+      `*Message:* ${encodeURIComponent(message)}`;
+
+    // Open WhatsApp
+    window.open(whatsappURL, "_blank");
+  });
+</script>
 
     <!-- footer -->
 
