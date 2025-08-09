@@ -157,8 +157,7 @@ span{ color:var(--main-color); }
 
 .heading {
     text-align: center;
-    font-size: 5rem;
-
+    font-size: 4rem;
 }
 
 /* about */
@@ -170,13 +169,14 @@ span{ color:var(--main-color); }
   background:var(--second-bg-color);
   padding:6rem 6%;
 }
+
 .about-img img{ width:100%; max-width:320px; height:auto; border-radius:12px; }
 .about-content h2{ font-size:clamp(2.2rem,4.2vw,3.6rem); margin-bottom:1rem; }
 .about-content h3{ font-size:1.9rem; margin-bottom:.6rem; }
 .about-content p{ font-size:1.6rem; color:#dfe6ee; line-height:1.6; }
 
 /* services */
-.services h2{ margin-bottom:4rem; text-align:center; }
+/* .services h2{ margin-bottom:4rem; text-align:center; }
 .services-container{
   display:flex;
   justify-content:center;
@@ -184,6 +184,7 @@ span{ color:var(--main-color); }
   gap:1.6rem;
   flex-wrap:wrap;
 }
+
 .services-box{
   flex:1 1 220px;
   max-width:360px;
@@ -197,40 +198,103 @@ span{ color:var(--main-color); }
 .services-box:hover{ transform:translateY(-6px); border-color:var(--main-color); }
 .services-box i{ font-size:4.4rem; color:var(--main-color); margin-bottom:1rem; }
 .services-box h3{ font-size:1.8rem; margin-bottom:.8rem; }
-.services-box p{ font-size:1.4rem; color:#dfe6ee; }
+.services-box p{ font-size:1.4rem; color:#dfe6ee; } */
+
 
 /* portfolio */
-.portfolio{ background:var(--second-bg-color); padding-bottom:4rem; }
-.portfolio-container{
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap:1.6rem;
-  align-items:center;
+.portfolio {
+    background: var(--second-bg-color);
+    padding: 5rem 9%;
 }
-.portfolio-box{
-  position:relative;
-  border-radius:1rem;
-  overflow:hidden;
-  box-shadow:0 6px 18px rgba(0,0,0,0.35);
-  background:transparent;
-  display:flex;
-  flex-direction:column;
+
+.portfolio h2 {
+    margin-bottom: 3rem;
+    font-size: 3rem;
+    text-align: center;
 }
-.portfolio-box img{ width:100%; height:auto; display:block; object-fit:cover; aspect-ratio:4/3; }
-.portfolio-layer{
-  position:absolute;
-  inset:0;
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
-  align-items:center;
-  padding:1.6rem;
-  background: linear-gradient(180deg, rgba(0,0,0,0.0) 40%, rgba(0,0,0,0.45) 100%);
-  transform:translateY(100%);
-  transition:transform .35s;
-  text-align:center;
+
+.portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    align-items: start;
 }
-.portfolio-box:hover .portfolio-layer{ transform:translateY(0); }
+
+.portfolio-box {
+    position: relative;
+    border-radius: 1.5rem;
+    box-shadow: 0 0 0.8rem var(--bg-color);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-box:hover {
+    transform: translateY(-5px);
+}
+
+.portfolio-box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.portfolio-box:hover img {
+    transform: scale(1.05);
+}
+
+.portfolio-layer {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), var(--main-color));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 1.5rem;
+    transform: translateY(100%);
+    transition: transform 0.5s ease;
+}
+
+.portfolio-box:hover .portfolio-layer {
+    transform: translateY(0);
+}
+
+.portfolio-layer h4 {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.portfolio-layer p {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin: 0.3rem 0 1rem;
+}
+
+.portfolio-layer a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    background: var(--text-color);
+    border-radius: 50%;
+    transition: background 0.3s ease;
+}
+
+.portfolio-layer a i {
+    font-size: 1.6rem;
+    color: var(--second-bg-color);
+}
+
+.portfolio-layer a:hover {
+    background: var(--bg-color);
+}
+
 
 /* contact */
 .contact form{ max-width:72rem; margin:0 auto; text-align:center; padding:2.4rem; }
