@@ -19,12 +19,30 @@
   --main-color:#0ef;
 }
 
+
+.title-with-photo {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* space between image and title */
+}
+
+.title-photo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%; /* makes it circular */
+  object-fit: cover;
+  border: 2px solid #ddd; /* optional border */
+}
+
+
+
 /* base */
 html{
   font-size:62.5%;
   overflow-x:hidden;
   -webkit-text-size-adjust:100%;
 }
+
 
 body{
   background:var(--bg-color);
@@ -130,12 +148,18 @@ span{ color:var(--main-color); }
   background:var(--main-color);
   border-radius:4rem;
   box-shadow:0 0 .8rem var(--main-color);
-  font-size:1.6rem;
+  font-size:1rem;
   color:var(--second-bg-color);
   font-weight:600;
   transition:.25s;
 }
 .btn:hover{ transform:translateY(-3px); box-shadow:none; }
+
+.heading {
+    text-align: center;
+    font-size: 5rem;
+
+}
 
 /* about */
 .about{
