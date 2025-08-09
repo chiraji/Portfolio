@@ -4,12 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      
-       
-       My Portfolio
-
-    </title>
+    <title>My Portfolio </title>
+    <link rel="icon" type="image/png" href="images/profile.png" />
 
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -288,56 +284,49 @@
 
     <!-- contact -->
 
-    <section class="contact" id="contact">
-      <h2 class="heading">Contact <span>Me!</span></h2>
+<section class="contact" id="contact">
+  <h2 class="heading">Contact <span>Me!</span></h2>
 
-      <form id="con">
-        <div class="input-box">
-          <input type="text" placeholder="Full Name" />
-          <input type="email" placeholder="Email Address" />
-        </div>
-        <div class="input-box">
-          <input type="number" placeholder="Mobile Number" />
-          <input type="text" placeholder="Email Subject" />
-        </div>
-        <textarea
-          name=""
-          id=""
-          cols="30"
-          rows="10"
-          placeholder="Your Message"
-        ></textarea>
-        <input type="submit" value="Send Message" class="btn" />
-      </form>
-    </section>
+  <form class="contact-form">
+    <div class="input-box">
+      <input type="text" id="name" placeholder="Full Name" required />
+      <input type="email" id="email" placeholder="Email Address" required />
+    </div>
+    <div class="input-box">
+      <input type="number" id="mobile" placeholder="Mobile Number" required />
+      <input type="text" id="subject" placeholder="Subject" required />
+    </div>
+    <textarea id="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+    <input type="submit" value="Send to WhatsApp" class="btn" id="whatsappForm"/>
+  </form>
+</section>
 
-    <script>
-  document.getElementById("con").addEventListener("submit", function (e) {
-    e.preventDefault();
+   <script>
+        document.getElementById('whatsappForm').addEventListener('click', function () {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const mobile = document.getElementById('mobile').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
 
-    // Your WhatsApp number (no spaces, no +)
-    let phoneNumber = "94712284817";
+            if (!name || !email || !mobile || !subject || !message) {
+                alert('Please fill all fields before sending.');
+                return;
+            }
 
-    // Get form values
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    let mobile = document.getElementById("mobile").value;
-    let subject = document.getElementById("subject").value;
-    let message = document.getElementById("message").value;
+            // Your WhatsApp number in international format without + or spaces (example: 94771234567)
+            const whatsappNumber = '94712284817';
 
-    // Create WhatsApp URL
-    let whatsappURL =
-      `https://wa.me/${phoneNumber}?text=` +
-      `*Name:* ${encodeURIComponent(name)}%0A` +
-      `*Email:* ${encodeURIComponent(email)}%0A` +
-      `*Mobile:* ${encodeURIComponent(mobile)}%0A` +
-      `*Subject:* ${encodeURIComponent(subject)}%0A` +
-      `*Message:* ${encodeURIComponent(message)}`;
+            const text = `*Portfolio Contact Message*\n\n*Name:* ${name}\n*Email:* ${email}\n*Phone:* ${mobile}\n*Subject:* ${subject}\n*Message:* ${message}`;
 
-    // Open WhatsApp
-    window.open(whatsappURL, "_blank");
-  });
-</script>
+            const encodedText = encodeURIComponent(text);
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
+
+            window.open(whatsappURL, '_blank');
+        });
+    </script>
+
+
 
     <!-- footer -->
 
