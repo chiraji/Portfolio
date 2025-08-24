@@ -52,10 +52,10 @@ ScrollReveal().reveal(".home-content p, .about-content", { origin: "right" });
 
 // typed js
 
-// const typed = new Typed('.multiple-text', {
-//     strings: ['Undergraduate', 'Undergraduate', 'Artist'],
-//     typeSpeed: 100,
-//     backSpeed: 100,
-//     backDelay: 1000,
-//     loop: true
-//     });
+const typed = new Typed('.multiple-text', {
+    strings: ['Undergraduate', ],
+    typeSpeed: 100,
+    backSpeed: 100,
+    backDelay: 1000,
+    loop: true
+    });
